@@ -30,7 +30,7 @@ class MainNavbar extends React.Component {
                         <Collapse isOpen={this.props.navOpen} navbar>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
-                                    <NavLink href="">Home</NavLink>
+                                    <NavLink href="#home">Home</NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink href="">Explore</NavLink>

@@ -11,7 +11,7 @@ import Contact from './Contact';
 class App extends React.Component {
     render() {
         return(
-            <div>
+            <div id="home">
               <MainNavbar/>
               <Home/>
               <Explore/>
