@@ -7,9 +7,19 @@ const navbarTogglerReducer = (navOpen=false, action) => {
         default:
             return navOpen;
     }
-} 
+}
+
+const modalTogglerReducer = (modalOpen=false, action) => {
+    switch(action.type) {
+        case 'TOGGLE_MODAL':
+            return action.payload;
+        default:
+            return modalOpen;
+    }
+}
 
 
 export default combineReducers({
-    navOpen: navbarTogglerReducer
+    navOpen: navbarTogglerReducer,
+    modalOpen: modalTogglerReducer
 })

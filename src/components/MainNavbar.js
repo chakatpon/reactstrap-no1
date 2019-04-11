@@ -11,35 +11,59 @@ import {
     NavLink,
     Container } from 'reactstrap';
 
+import 'bootstrap/dist/js/bootstrap';
+import 'popper.js/dist/popper';
+import $ from 'jquery/dist/jquery';
+
 
 class MainNavbar extends React.Component {
 
    componentDidMount() {
-       console.log("this.props : ");
-       console.log(this.props.navOpen);
+       
+        $("body").scrollspy({ target: '#main-nav', offset: 50 });
+
+        $("#main-nav a").on('click', function (event) {
+            if (this.hash !== "") {
+              event.preventDefault();
+      
+              const hash = this.hash;
+      
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 800, function () {
+      
+                window.location.hash = hash;
+              });
+            }
+          });
+       
+        
    }
 
+//    componentWillMount() {
+//     document.body.scrollspy({ target: '#main-nav'});
+//    }
+
     render() {
-        console.log(this.props)
         return(
             <div>
                 <Navbar fixed='top' dark color="dark" expand="md" id="main-nav">
                     <Container>
-                        <NavbarBrand href="/">Chakatpon Khunthong</NavbarBrand>
-                        <NavbarToggler onClick={() => this.props.toggleNav(!this.props.navOpen)} />
+                        <NavbarBrand href="/"><i className="fas fa-globe"></i>{" "}Chakatpon Khunthong</NavbarBrand>
+                        <NavbarToggler onClick={() => this.props.toggleNav(this.props.navOpen)} />
                         <Collapse isOpen={this.props.navOpen} navbar>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
-                                    <NavLink href="#home">Home</NavLink>
+                                    <NavLink  href="#home">Home</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="">Explore</NavLink>
+                                    <NavLink href="#explore-head-section">Explore</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="">Create</NavLink>
+                                    <NavLink href="#create-head-section">Create</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="">Share</NavLink>
+                                    <NavLink href="#share-head-section">Share</NavLink>
                                 </NavItem>
                             </Nav>
                         </Collapse>

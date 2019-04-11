@@ -18,7 +18,6 @@ class App extends React.Component {
               <Create/>
               <Share/>
               <Footer/>
-              <Contact/>
             </div>
         );
     }
