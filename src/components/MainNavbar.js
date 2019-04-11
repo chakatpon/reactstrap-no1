@@ -11,8 +11,8 @@ import {
     NavLink,
     Container } from 'reactstrap';
 
-import 'bootstrap/dist/js/bootstrap';
-import 'popper.js/dist/popper';
+import 'bootstrap/dist/js/bootstrap.min';
+import 'popper.js/dist/popper.min';
 import $ from 'jquery/dist/jquery';
 
 
@@ -40,9 +40,7 @@ class MainNavbar extends React.Component {
         
    }
 
-//    componentWillMount() {
-//     document.body.scrollspy({ target: '#main-nav'});
-//    }
+
 
     render() {
         return(
